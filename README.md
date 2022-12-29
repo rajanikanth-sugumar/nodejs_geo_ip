@@ -1,2 +1,9 @@
-# nodejs_geo_ip
-Project using Node.JS express.js and SQLLite3
+# GEO-IP
+
+Using JQuery, Express.js and Node.js
+
+Persistence SQLite3
+
+./db/geo.db
+
+node <<inquire.js>>
