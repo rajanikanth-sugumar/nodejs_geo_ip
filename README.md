@@ -1,4 +1,4 @@
-# GEO-IP
+# GEO-IP ver 1.0
 
 Using JQuery, Express.js and Node.js
 
